@@ -16,8 +16,8 @@ public class GameTetris {
     private final int FIELD_WIDTH = 10;     //in block
     private final int FIELD_HEIGHT = 18;
     //private final int START_LOCATION = 180;
-    private final int FIELD_DX = 7;
-    private final int FIELD_DY = 26;
+    private final int FIELD_DX = 15;
+    private final int FIELD_DY = 37;
     private final int LEFT = 37;
     private final int UP = 38;
     private final int RIGHT = 39;
@@ -65,10 +65,10 @@ public class GameTetris {
 
         frame = new JFrame(TITLE_OF_PROGRAM);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(FIELD_WIDTH * BLOCK_SIZE + FIELD_DX, FIELD_HEIGHT * BLOCK_SIZE + FIELD_DY);
+        frame.setPreferredSize(new Dimension(FIELD_WIDTH * BLOCK_SIZE + FIELD_DX, FIELD_HEIGHT * BLOCK_SIZE + FIELD_DY));
         frame.setLocation((screenSize.width - FIELD_WIDTH * BLOCK_SIZE + FIELD_DX) / 2, (screenSize.height - FIELD_HEIGHT * BLOCK_SIZE + FIELD_DY) / 2);
         frame.setResizable(false);
-
+        frame.pack();
         canvasPanel.setBackground(Color.BLACK);
 
         frame.addKeyListener(new KeyAdapter() {
